@@ -12,6 +12,7 @@ jobs:
     steps:
       - checkout
       - run: npm ci
+      - run: npm run test # ⬅️ Étape ajoutée ici pour exécuter les tests
       - run: npm run build
       - persist_to_workspace:
           root: .
