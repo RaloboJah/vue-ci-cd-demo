@@ -11,7 +11,15 @@ jobs:
     executor: node-executor
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - npm-cache-{{ checksum "package-lock.json" }}
+            - npm-cache-
       - run: npm ci
+      - save_cache:
+          paths:
+            - ~/.npm
+          key: npm-cache-{{ checksum "package-lock.json" }}
       - run: npm run test
       - run: npm run build
       - persist_to_workspace:
@@ -23,7 +31,14 @@ jobs:
     executor: node-executor
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - npm-cache-{{ checksum "package-lock.json" }}
+            - npm-cache-
       - run: npm ci
+      - run:
+          name: Install Playwright
+          command: npm install --save-dev @playwright/test
       - run:
           name: Install Playwright Browsers
           command: npx playwright install --with-deps
