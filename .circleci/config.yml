@@ -3,21 +3,25 @@ version: 2.1
 executors:
   node-executor:
     docker:
-      - image: cimg/node:18.20
+      - image: cimg/node:18.20 # Image Node officielle CircleCI
     working_directory: ~/project
 
 jobs:
   build:
     executor: node-executor
     steps:
-      - checkout
-      - run: npm ci
-      - run: npm run test # ⬅️ Étape ajoutée ici pour exécuter les tests
-      - run: npm run build
+      - checkout # Récupérer le code
+      - run: npm ci # Installer les dépendances de manière propre (package-lock.json)
+      - run:
+          name: Lancer les tests
+          command: npm run test # Exécuter les tests (Vitest ou Jest selon config)
+      - run:
+          name: Build du projet
+          command: npm run build
       - persist_to_workspace:
           root: .
           paths:
-            - dist
+            - dist # Sauvegarder le dossier build pour le job deploy
 
   deploy:
     executor: node-executor
