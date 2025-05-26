@@ -12,29 +12,31 @@ jobs:
     steps:
       - checkout
       - run: npm ci
-      - run: npm run test
+      - run: npm run test # ⬅️ Étape ajoutée ici pour exécuter les tests
       - run: npm run build
       - persist_to_workspace:
           root: .
           paths:
             - dist
 
-  e2e:
+  e2e-tests:
     docker:
-      - image: mcr.microsoft.com/playwright:v1.43.1-jammy
+      - image: mcr.microsoft.com/playwright:v1.44.1-jammy
     working_directory: ~/project
     steps:
       - checkout
-      - run: npm ci
+      - run:
+          name: Install dependencies
+          command: npm ci
       - run:
           name: Install Playwright Browsers
           command: npx playwright install --with-deps
       - run:
-          name: Run Playwright E2E tests
+          name: Run Playwright E2E Tests
           command: npx playwright test
       - store_artifacts:
-          path: playwright-report
-          destination: playwright-report
+          path: test-results
+          destination: playwright-test-results
 
   deploy:
     executor: node-executor
@@ -50,10 +52,10 @@ workflows:
   deploy-on-push:
     jobs:
       - build
-      - e2e:
+      - e2e-tests:
           requires:
             - build
       - deploy:
           requires:
             - build
-            - e2e
+            - e2e-tests
