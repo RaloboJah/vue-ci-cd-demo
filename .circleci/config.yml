@@ -18,6 +18,21 @@ jobs:
           paths:
             - dist
 
+  test-e2e:
+    executor: node-executor
+    steps:
+      - checkout
+      - run: npm ci
+      - run:
+          name: Install Playwright Browsers
+          command: npx playwright install --with-deps
+      - run:
+          name: Run Playwright end-to-end tests
+          command: npx playwright test
+      - store_artifacts:
+          path: playwright-report
+          destination: playwright-report
+
   deploy:
     executor: node-executor
     steps:
@@ -32,6 +47,9 @@ workflows:
   deploy-on-push:
     jobs:
       - build
-      - deploy:
+      - test-e2e:
           requires:
             - build
+      - deploy:
+          requires:
+            - test-e2e
