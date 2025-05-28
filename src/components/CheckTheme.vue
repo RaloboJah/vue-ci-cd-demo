@@ -1,13 +1,14 @@
 <template>
     <div class="theme">
-        <div class="container">
+        <!-- <div class="container">
             <label class="switch">
                 <input class="togglesw" type="checkbox" checked="">
                 <div class="indicator left"></div>
                 <div class="indicator right"></div>
                 <div class="button"></div>
             </label>
-        </div>
+        </div> -->
+        Demo
     </div>
 </template>
 
