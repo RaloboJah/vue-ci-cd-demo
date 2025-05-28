@@ -1,10 +1,13 @@
 <script setup>
 import HelloWorld from "./components/HelloWorld.vue";
 import TheWelcome from "./components/TheWelcome.vue";
+import Theme from "./components/CheckTheme.vue"
+
 </script>
 
 <template>
   <header>
+  <Theme/>
     <img
       alt="Vue logo"
       class="logo"
