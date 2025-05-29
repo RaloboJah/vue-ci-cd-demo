@@ -1,12 +1,22 @@
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, onMounted } from "vue";
+import axios from "axios";
 
-// Exemple de produits
-const produits = ref([
-  { id: 1, nom: "Produit A", prix: 10, quantite: 2 },
-  { id: 2, nom: "Produit B", prix: 20, quantite: 1 },
-  { id: 3, nom: "Produit C", prix: 15, quantite: 3 },
-]);
+const produits = ref([]);
+
+// Appel API pour récupérer les produits
+const fetchProduits = async () => {
+  try {
+    const response = await axios.get(
+      "https://monprojet.onrender.com/api/produits/"
+    );
+    produits.value = response.data;
+  } catch (error) {
+    console.error("Erreur lors du chargement des produits :", error);
+  }
+};
+
+onMounted(fetchProduits);
 
 // Calcul automatique des montants
 const produitsAvecMontant = computed(() =>
@@ -16,7 +26,7 @@ const produitsAvecMontant = computed(() =>
   }))
 );
 
-// Totaux (optionnel)
+// Totaux
 const totalMontant = computed(() =>
   produitsAvecMontant.value.reduce((sum, p) => sum + p.montant, 0)
 );
@@ -24,6 +34,7 @@ const totalMontant = computed(() =>
 
 <template>
   <div class="p-4">
+    <h1>Liste des Produits</h1>
     <table border="1" cellpadding="10">
       <thead>
         <tr>
