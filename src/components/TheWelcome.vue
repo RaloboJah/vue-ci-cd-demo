@@ -8,7 +8,7 @@ const produits = ref([]);
 const fetchProduits = async () => {
   try {
     const response = await axios.get(
-      "https://monprojet.onrender.com/api/produits/"
+      "https://pratique-django.onrender.com/api/produits/"
     );
     produits.value = response.data;
   } catch (error) {
