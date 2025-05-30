@@ -19,7 +19,7 @@
           <label>Quantité :</label>
           <input type="number" v-model.number="form.quantite" required />
         </div>
-        <div class="modal-actions">
+        <div class="modal-buttons">
           <button type="submit">
             {{ mode === "modifier" ? "Modifier" : "Ajouter" }}
           </button>
@@ -32,7 +32,7 @@
         <p>
           Voulez-vous vraiment supprimer <strong>{{ produit?.nom }}</strong> ?
         </p>
-        <div class="modal-actions">
+        <div class="modal-buttons">
           <button @click="supprimer">Oui, supprimer</button>
           <button @click="$emit('fermer')">Annuler</button>
         </div>
