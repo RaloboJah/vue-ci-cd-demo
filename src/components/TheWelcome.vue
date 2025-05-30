@@ -88,3 +88,40 @@ const fermerModal = () => {
     />
   </div>
 </template>
+
+<style scoped>
+h1 {
+  margin-bottom: 20px;
+}
+
+button {
+  margin-right: 5px;
+  padding: 6px 10px;
+  border: none;
+  background-color: #3498db;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th,
+td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+th {
+  background-color: #f4f4f4;
+}
+</style>
