@@ -103,11 +103,12 @@ const supprimer = async () => {
 };
 </script>
 
-<style scoped>
+<style>
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 9999;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
@@ -115,19 +116,50 @@ const supprimer = async () => {
   align-items: center;
   justify-content: center;
 }
+
 .modal-content {
   background: white;
-  padding: 20px;
-  border-radius: 10px;
-  min-width: 300px;
+  padding: 24px;
+  border-radius: 8px;
+  width: 300px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
-.modal-content h2 {
-  margin-top: 0;
+
+.modal-content h3 {
+  margin-bottom: 16px;
 }
-.modal-actions {
-  margin-top: 15px;
+
+.modal-content label {
+  display: block;
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.modal-buttons {
   display: flex;
   justify-content: flex-end;
-  gap: 10px;
+  margin-top: 20px;
+}
+
+.modal-buttons button {
+  padding: 6px 12px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #3498db;
+  color: white;
+  cursor: pointer;
+}
+
+.modal-buttons button:hover {
+  background-color: #2980b9;
 }
 </style>
