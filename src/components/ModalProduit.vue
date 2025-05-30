@@ -76,7 +76,7 @@ const soumettre = async () => {
   try {
     if (props.mode === "ajouter") {
       await axios.post(
-        "https://pratique-django.onrender.com/api/produits/",
+        "https://pratique-django.onrender.com/api/produits/ajouter/",
         form.value
       );
     } else if (props.mode === "modifier") {
@@ -94,7 +94,7 @@ const soumettre = async () => {
 const supprimer = async () => {
   try {
     await axios.delete(
-      `https://pratique-django.onrender.com/api/produits/${props.produit.id}/`
+      `https://pratique-django.onrender.com/api/produits/supprimer/${props.produit.id}/`
     );
     emit("fermer");
   } catch (error) {
