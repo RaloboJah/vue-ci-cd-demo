@@ -47,8 +47,8 @@ import axios from "axios";
 
 const props = defineProps({
   visible: Boolean,
-  mode: String, // 'ajouter', 'modifier', 'supprimer'
-  produit: Object, // null ou { id, nom, prix, quantite }
+  mode: String,
+  produit: Object,
 });
 
 const emit = defineEmits(["fermer"]);

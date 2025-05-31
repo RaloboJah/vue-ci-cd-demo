@@ -1,11 +1,11 @@
 <script setup>
 import { ref, computed, onMounted } from "vue";
 import axios from "axios";
-import ModalProduit from "./ModalProduit.vue"; // 👈 Ton composant modal
+import ModalProduit from "./ModalProduit.vue";
 
 const produits = ref([]);
 const modalVisible = ref(false);
-const modalMode = ref("ajouter"); // ou "modifier", "supprimer"
+const modalMode = ref("ajouter");
 const produitActuel = ref(null);
 
 const fetchProduits = async () => {
@@ -40,7 +40,7 @@ const ouvrirModal = (mode, produit = null) => {
 
 const fermerModal = () => {
   modalVisible.value = false;
-  fetchProduits(); // recharge les données après ajout/modif/supp
+  fetchProduits();
 };
 </script>
 
