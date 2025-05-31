@@ -2,6 +2,8 @@
 import { ref, computed, onMounted } from "vue";
 import axios from "axios";
 import ModalProduit from "./ModalProduit.vue";
+import "@fortawesome/fontawesome-free/css/all.css";
+import "@fortawesome/fontawesome-free/js/all.js";
 
 const produits = ref([]);
 const modalVisible = ref(false);
@@ -66,10 +68,16 @@ const fermerModal = () => {
           <td>{{ produit.quantite }}</td>
           <td>{{ produit.montant }} €</td>
           <td>
-            <button @click="ouvrirModal('modifier', produit)">Modifier</button>
-            <button @click="ouvrirModal('supprimer', produit)">
-              Supprimer
-            </button>
+            <i
+              class="fas fa-edit icon-action"
+              title="Modifier"
+              @click="ouvrirModal('modifier', produit)"
+            ></i>
+            <i
+              class="fas fa-trash-alt icon-action"
+              title="Supprimer"
+              @click="ouvrirModal('supprimer', produit)"
+            ></i>
           </td>
         </tr>
       </tbody>
@@ -123,5 +131,16 @@ td {
 
 th {
   background-color: #f4f4f4;
+}
+
+.icon-action {
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-right: 10px;
+  color: #3498db;
+}
+
+.icon-action:hover {
+  color: #e74c3c;
 }
 </style>
