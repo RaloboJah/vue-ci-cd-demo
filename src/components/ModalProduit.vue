@@ -81,7 +81,7 @@ const soumettre = async () => {
       );
     } else if (props.mode === "modifier") {
       await axios.put(
-        `https://pratique-django.onrender.com/api/produits/${props.produit.id}/`,
+        `https://pratique-django.onrender.com/api/produits/modifier/${props.produit.id}/`,
         form.value
       );
     }
