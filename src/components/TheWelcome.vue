@@ -121,11 +121,12 @@ button:hover {
 table {
   width: 100%;
   text-align: left;
-  border-collapse: separate; /* nécessaire pour radius */
-  border-spacing: 0; /* éviter les espaces */
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  overflow: hidden; /* arrondir la table entière */
+  border-collapse: separate; /* Permet les coins arrondis */
+  border-spacing: 0; /* Supprime les espaces entre les cellules */
+  border: 1px solid #ccc; /* Bordure fine et simple */
+  border-radius: 8px; /* Coins arrondis */
+  background-color: white; /* Couleur de fond propre */
+  box-shadow: none; /* Supprime toute ombre éventuelle */
   margin-top: 20px;
 }
 
@@ -133,10 +134,11 @@ th,
 td {
   padding: 10px;
   border-bottom: 1px solid #ccc;
+  background-color: transparent;
 }
 
 th {
-  background-color: #f4f4f4;
+  background-color: #f9f9f9;
   font-weight: bold;
 }
 
@@ -161,6 +163,7 @@ td:last-child {
   cursor: pointer;
   font-size: 1.2rem;
   color: #3498db;
+  box-shadow: none;
 }
 
 .icon-button:hover {
