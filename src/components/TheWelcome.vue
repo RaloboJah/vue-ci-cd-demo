@@ -123,7 +123,6 @@ table {
   text-align: left;
   border-collapse: separate; /* Permet les coins arrondis */
   border-spacing: 0; /* Supprime les espaces entre les cellules */
-  border: 1px solid #ccc; /* Bordure fine et simple */
   border-radius: 8px; /* Coins arrondis */
   background-color: white; /* Couleur de fond propre */
   box-shadow: none; /* Supprime toute ombre éventuelle */
