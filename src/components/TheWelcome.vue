@@ -112,7 +112,6 @@ button {
   color: white;
   cursor: pointer;
   border-radius: 4px;
-  transition: background-color 0.3s ease;
 }
 
 button:hover {
@@ -121,9 +120,9 @@ button:hover {
 
 table {
   width: 100%;
+  text-align: left;
   border-collapse: collapse;
   margin-top: 20px;
-  text-align: left;
 }
 
 th,
@@ -153,7 +152,6 @@ td:last-child {
   cursor: pointer;
   font-size: 1.2rem;
   color: #3498db;
-  transition: color 0.3s ease;
 }
 
 .icon-button:hover {
