@@ -121,56 +121,23 @@ button:hover {
 table {
   width: 100%;
   text-align: left;
-  border-collapse: separate; /* Permet les coins arrondis */
-  border-spacing: 0; /* Supprime les espaces entre les cellules */
-  border-radius: 8px; /* Coins arrondis */
-  background-color: white; /* Couleur de fond propre */
-  box-shadow: none; /* Supprime toute ombre éventuelle */
+  border-collapse: collapse;
   margin-top: 20px;
+  border: 1px solid #ccc; /* Bordure fine autour de la table */
 }
 
 th,
 td {
   padding: 10px;
-  border-bottom: 1px solid #ccc;
-  background-color: transparent;
+  border: 1px solid #ccc; /* Bordure fine entre cellules */
 }
 
 th {
-  background-color: #f9f9f9;
+  background-color: #f4f4f4;
   font-weight: bold;
 }
 
-tr:last-child td {
-  border-bottom: none;
-}
-
-.actions-col {
-  text-align: center;
-}
-
-td:last-child {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-
-.icon-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1.2rem;
-  color: #3498db;
-  box-shadow: none;
-}
-
-.icon-button:hover {
-  color: #2c3e50;
-}
-
-.icon-button:focus {
-  outline: none;
-  box-shadow: none;
+td {
+  background-color: white;
 }
 </style>
