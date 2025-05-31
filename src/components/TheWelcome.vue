@@ -68,16 +68,18 @@ const fermerModal = () => {
           <td>{{ produit.quantite }}</td>
           <td>{{ produit.montant }} €</td>
           <td>
-            <i
-              class="fas fa-edit icon-action"
-              title="Modifier"
+            <button
+              class="icon-button"
               @click="ouvrirModal('modifier', produit)"
-            ></i>
-            <i
-              class="fas fa-trash-alt icon-action"
-              title="Supprimer"
+            >
+              <i class="fas fa-edit" title="Modifier"></i>
+            </button>
+            <button
+              class="icon-button"
               @click="ouvrirModal('supprimer', produit)"
-            ></i>
+            >
+              <i class="fas fa-trash-alt" title="Supprimer"></i>
+            </button>
           </td>
         </tr>
       </tbody>
@@ -133,14 +135,16 @@ th {
   background-color: #f4f4f4;
 }
 
-.icon-action {
+.icon-button {
+  background: none;
+  border: none;
   cursor: pointer;
-  font-size: 1.2rem;
   margin-right: 10px;
+  font-size: 1.2rem;
   color: #3498db;
 }
 
-.icon-action:hover {
+.icon-button:hover {
   color: #e74c3c;
 }
 </style>
