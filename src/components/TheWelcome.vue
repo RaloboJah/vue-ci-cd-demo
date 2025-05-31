@@ -157,4 +157,9 @@ td:last-child {
 .icon-button:hover {
   color: #2c3e50;
 }
+
+.icon-button:focus {
+  outline: none;
+  box-shadow: none;
+}
 </style>
