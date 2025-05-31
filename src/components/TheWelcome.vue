@@ -108,7 +108,6 @@ button {
   margin-right: 5px;
   padding: 6px 10px;
   border: none;
-  background-color: #3498db;
   color: white;
   cursor: pointer;
   border-radius: 4px;
