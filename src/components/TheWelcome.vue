@@ -121,18 +121,27 @@ button:hover {
 table {
   width: 100%;
   text-align: left;
-  border-collapse: collapse;
+  border-collapse: separate; /* nécessaire pour radius */
+  border-spacing: 0; /* éviter les espaces */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden; /* arrondir la table entière */
   margin-top: 20px;
 }
 
 th,
 td {
   padding: 10px;
-  border: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
 }
 
 th {
   background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+tr:last-child td {
+  border-bottom: none;
 }
 
 .actions-col {
