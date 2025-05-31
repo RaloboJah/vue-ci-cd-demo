@@ -140,4 +140,16 @@ th {
 td {
   background-color: white;
 }
+
+th:last-child {
+  text-align: center;
+}
+
+td:last-child {
+  text-align: center;
+}
+
+td:last-child button {
+  margin: 0 5px;
+}
 </style>
