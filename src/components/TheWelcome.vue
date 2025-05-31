@@ -58,7 +58,7 @@ const fermerModal = () => {
           <th>Prix</th>
           <th>Quantité</th>
           <th>Montant</th>
-          <th>Actions</th>
+          <th class="actions-col">Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -112,6 +112,7 @@ button {
   color: white;
   cursor: pointer;
   border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
@@ -120,9 +121,9 @@ button:hover {
 
 table {
   width: 100%;
-  text-align: left;
   border-collapse: collapse;
   margin-top: 20px;
+  text-align: left;
 }
 
 th,
@@ -135,16 +136,27 @@ th {
   background-color: #f4f4f4;
 }
 
+.actions-col {
+  text-align: center;
+}
+
+td:last-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
 .icon-button {
   background: none;
   border: none;
   cursor: pointer;
-  margin-right: 10px;
   font-size: 1.2rem;
   color: #3498db;
+  transition: color 0.3s ease;
 }
 
 .icon-button:hover {
-  color: #e74c3c;
+  color: #2c3e50;
 }
 </style>
